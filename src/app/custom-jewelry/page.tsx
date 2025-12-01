@@ -45,6 +45,8 @@ const highlightDesigns = [
   { id: 'h2', name: 'Sapphire Deco Pendant', imgSrc: '/Images/Custom_Design/3.png', dataAiHint: 'sapphire art deco' },
   { id: 'h3', name: 'Floral Diamond Hoops', imgSrc: '/Images/Custom_Design/2.png', dataAiHint: 'diamond flower hoops' },
   { id: 'h4', name: 'Ruby Sunset Necklace', imgSrc: '/Images/Custom_Design/4.png', dataAiHint: 'ruby gold necklace' },
+  { id: 'h5', name: 'Oceanic Wave Bracelet', imgSrc: '/Images/Custom_Design/5.png', dataAiHint: 'ocean wave bracelet' },
+  { id: 'h6', name: 'Galaxy Spiral Ring', imgSrc: '/Images/Custom_Design/6.png', dataAiHint: 'galaxy spiral ring' },
 ];
 
 const whyChooseUsItems = [
@@ -193,9 +195,9 @@ export default function CustomJewelryPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Custom Design Highlights</h2>
           <p className="text-lg text-foreground/70 mt-2">Creations born from imagination and artistry.</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {highlightDesigns.map((design, index) => (
-            <div key={design.id} className={`relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg group ${index === 1 || index === 2 ? 'md:col-span-2' : ''}`}>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+          {highlightDesigns.map((design) => (
+            <div key={design.id} className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg group">
                <Image src={design.imgSrc} alt={design.name} fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint={design.dataAiHint} />
                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
                   <h3 className="text-white font-semibold text-lg drop-shadow-md">{design.name}</h3>
