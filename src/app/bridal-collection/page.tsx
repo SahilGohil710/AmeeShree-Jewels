@@ -74,7 +74,7 @@ const BridalSetCard = ({ set, index, onClick }: { set: typeof placeholderBridalS
       </div>
       <div className="p-4">
         <h3 className="text-lg font-semibold text-primary truncate">{set.name}</h3>
-        <p className="text-sm text-gray-300 mt-1 min-h-[3em]">{set.description}</p>
+        <p className="text-sm text-foreground/80 mt-1 min-h-[3em]">{set.description}</p>
       </div>
     </div>
   );

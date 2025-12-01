@@ -80,7 +80,7 @@ const EarringCard = ({ earring, index, onClick }: { earring: typeof placeholderE
       </div>
       <div className="p-4">
         <h3 className="text-lg font-semibold text-primary truncate">{earring.name}</h3>
-        <p className="text-sm text-gray-200 mt-1 min-h-[3em]">{earring.description}</p>
+        <p className="text-sm text-foreground/80 mt-1 min-h-[3em]">{earring.description}</p>
       </div>
     </div>
   );
