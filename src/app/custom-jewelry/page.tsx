@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { UploadCloud, Gem, Sparkles, Award, CheckCircle, Pencil, MessageSquare, Mail, CornerDownRight, BotMessageSquare } from 'lucide-react';
+import { UploadCloud, Gem, Sparkles, Award, CheckCircle, Pencil, MessageSquare, Mail, CornerDownRight, BotMessageSquare, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -200,3 +200,5 @@ export default function CustomJewelryPage() {
     </div>
   );
 }
+
+    
