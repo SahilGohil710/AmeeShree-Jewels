@@ -3,20 +3,9 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Slider } from '@/components/ui/slider';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
-import { Label } from '@/components/ui/label';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import { UploadCloud, Gem, Sparkles, Award, CheckCircle, Pencil, MessageSquare } from 'lucide-react';
+import { UploadCloud, Gem, Sparkles, Award, CheckCircle, Pencil, MessageSquare, Mail, CornerDownRight, BotMessageSquare } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 // Step data for the process section
 const processSteps = [
@@ -76,10 +65,34 @@ const whyChooseUsItems = [
     }
 ];
 
+const startOrderSteps = [
+    {
+        icon: <MessageSquare className="w-8 h-8 text-primary" />,
+        title: "Send Us Your Idea",
+        description: "Reach out on WhatsApp or Email with your thoughts, reference images, or initial sketches. No idea is too big or too small."
+    },
+    {
+        icon: <Pencil className="w-8 h-8 text-primary" />,
+        title: "We Share Concepts",
+        description: "Our designers will collaborate with you, providing detailed sketches and 3D models to refine your vision until it’s perfect."
+    },
+    {
+        icon: <CheckCircle className="w-8 h-8 text-primary" />,
+        title: "Your Piece is Delivered",
+        description: "Once approved, our artisans craft your one-of-a-kind jewel. It arrives in our signature packaging, ready to be treasured."
+    }
+];
+
+const WHATSAPP_NUMBER = '919819264909';
+const WHATSAPP_MESSAGE = "Hi AmeeShree Jewels, I would like to create a custom jewellery piece. Here's my idea: ";
+const EMAIL_ADDRESS = 'support@ameeshreejewels.com';
+const EMAIL_SUBJECT = 'Custom Jewellery Request – AmeeShree Jewels';
+const EMAIL_BODY = 'Hello, I want to create a custom jewellery piece. My requirements are:';
+
 export default function CustomJewelryPage() {
   return (
     <div className="py-16 px-4 md:px-6 bg-background text-foreground animate-fadeInSmooth">
-      {/* Hero Section */}
+      {/* --- Hero Section --- */}
       <div className="max-w-6xl mx-auto mb-24">
         <div className="grid md:grid-cols-2 gap-4 items-center">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl">
@@ -92,7 +105,7 @@ export default function CustomJewelryPage() {
                     priority
                 />
             </div>
-             <div className="space-y-6 md:-ml-16 z-10">
+             <div className="space-y-8 md:-ml-16 z-10 p-8">
                  <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
                     <Image
                         src="/Images/Custom_Design/YourVision_img2.png"
@@ -103,9 +116,21 @@ export default function CustomJewelryPage() {
                         priority
                     />
                  </div>
-                <div className="p-8">
+                <div className="text-center md:text-left">
                     <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">Your Vision, Our Artistry</h1>
-                    <p className="text-lg text-foreground/80 max-w-md">From a fleeting idea to a tangible treasure, our bespoke service transforms your personal story into an exquisite piece of high jewelry, crafted exclusively for you.</p>
+                    <p className="text-lg text-foreground/80 max-w-md mx-auto md:mx-0">From a fleeting idea to a tangible treasure, our bespoke service transforms your personal story into an exquisite piece of high jewelry, crafted exclusively for you.</p>
+                     <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <Button asChild size="lg" className="w-full sm:w-auto">
+                            <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noopener noreferrer">
+                                <BotMessageSquare className="mr-2" /> Start on WhatsApp
+                            </a>
+                        </Button>
+                        <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+                           <a href={`mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`}>
+                               <Mail className="mr-2" /> Email Us Your Idea
+                           </a>
+                        </Button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -113,7 +138,7 @@ export default function CustomJewelryPage() {
 
       <Separator className="bg-border/50 max-w-5xl mx-auto my-24" />
 
-      {/* 4-Step Process Section */}
+      {/* --- 4-Step Process Section --- */}
       <div className="max-w-6xl mx-auto mb-24">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">The Bespoke Journey</h2>
@@ -133,10 +158,36 @@ export default function CustomJewelryPage() {
           ))}
         </div>
       </div>
-      
-      <Separator className="bg-border/50 max-w-5xl mx-auto my-24" />
 
-      {/* Highlights Gallery */}
+       <Separator className="bg-border/50 max-w-5xl mx-auto my-24" />
+
+       {/* --- How to Start Your Custom Order --- */}
+       <div className="max-w-5xl mx-auto mb-24">
+         <div className="text-center mb-16">
+           <h2 className="text-3xl md:text-4xl font-bold text-primary">How to Start Your Custom Order</h2>
+           <p className="text-lg text-foreground/70 mt-2">A simple, personal, and collaborative experience.</p>
+         </div>
+         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+           {startOrderSteps.map((step, index) => (
+             <div key={step.title} className="p-8 bg-card/60 rounded-xl text-center flex flex-col items-center shadow-md transition-shadow hover:shadow-lg border border-transparent hover:border-primary/20">
+               <div className="p-4 bg-primary/10 rounded-full mb-4">{step.icon}</div>
+               <h3 className="text-xl font-semibold mb-2 text-primary">{`Step ${index + 1}: ${step.title}`}</h3>
+               <p className="text-foreground/70 leading-relaxed text-sm">{step.description}</p>
+             </div>
+           ))}
+         </div>
+          <div className="mt-12 text-center">
+              <Button asChild size="lg">
+                  <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noopener noreferrer">
+                      Contact a Designer Now
+                  </a>
+              </Button>
+          </div>
+       </div>
+
+       <Separator className="bg-border/50 max-w-5xl mx-auto my-24" />
+
+      {/* --- Highlights Gallery --- */}
       <div className="max-w-6xl mx-auto mb-24">
          <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Custom Design Highlights</h2>
@@ -156,22 +207,32 @@ export default function CustomJewelryPage() {
       
        <Separator className="bg-border/50 max-w-5xl mx-auto my-24" />
 
-      {/* Why Choose Us Section */}
+      {/* --- Why Choose Us Section --- */}
       <div className="max-w-5xl mx-auto mb-24">
         <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary">An Unparalleled Experience</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyChooseUsItems.map(item => (
-                <div key={item.title} className="p-8 bg-card/60 rounded-xl text-center flex flex-col items-center shadow-md transition-shadow hover:shadow-lg">
+                <div key={item.title} className="p-8 bg-card/60 rounded-xl text-center flex flex-col items-center shadow-md transition-shadow hover:shadow-lg border border-transparent hover:border-primary/20">
                     <div className="p-4 bg-primary/10 rounded-full mb-4">{item.icon}</div>
                     <h3 className="text-xl font-semibold mb-2 text-primary">{item.title}</h3>
-                    <p className="text-foreground/70 leading-relaxed">{item.description}</p>
+                    <p className="text-foreground/70 leading-relaxed text-sm">{item.description}</p>
                 </div>
             ))}
         </div>
       </div>
 
+       {/* Floating WhatsApp Button */}
+        <a 
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white rounded-full p-3 shadow-lg hover:bg-[#128C7E] transition-colors duration-300 animate-float"
+            aria-label="Start custom design on WhatsApp"
+        >
+            <BotMessageSquare className="w-8 h-8" />
+        </a>
     </div>
   );
 }
