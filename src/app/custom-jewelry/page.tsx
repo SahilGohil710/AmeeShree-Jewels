@@ -41,12 +41,12 @@ const processSteps = [
 
 // Highlight gallery data
 const highlightDesigns = [
-  { id: 'h1', name: 'Emerald Bloom Ring', imgSrc: '/Images/Custom_Design/1.png', dataAiHint: 'emerald flower ring' },
-  { id: 'h2', name: 'Sapphire Deco Pendant', imgSrc: '/Images/Custom_Design/3.png', dataAiHint: 'sapphire art deco' },
-  { id: 'h3', name: 'Floral Diamond Hoops', imgSrc: '/Images/Custom_Design/2.png', dataAiHint: 'diamond flower hoops' },
-  { id: 'h4', name: 'Ruby Sunset Necklace', imgSrc: '/Images/Custom_Design/4.png', dataAiHint: 'ruby gold necklace' },
-  { id: 'h5', name: 'Oceanic Wave Bracelet', imgSrc: '/Images/Custom_Design/5.png', dataAiHint: 'ocean wave bracelet' },
-  { id: 'h6', name: 'Galaxy Spiral Ring', imgSrc: '/Images/Custom_Design/6.png', dataAiHint: 'galaxy spiral ring' },
+  { id: 'h1', name: 'The Brushed Silver Flora Garland', imgSrc: '/Images/Custom_Design/1.png', dataAiHint: 'emerald flower ring' },
+  { id: 'h2', name: 'The Regal Polki & Ruby Jadau Choker', imgSrc: '/Images/Custom_Design/3.png', dataAiHint: 'sapphire art deco' },
+  { id: 'h3', name: 'The Geometric Mosaic Radiant Ring', imgSrc: '/Images/Custom_Design/2.png', dataAiHint: 'diamond flower hoops' },
+  { id: 'h4', name: 'The Flush-Set Marquise Eternity Bangle', imgSrc: '/Images/Custom_Design/4.png', dataAiHint: 'ruby gold necklace' },
+  { id: 'h5', name: 'The Radiant Azure Swirl Pendant', imgSrc: '/Images/Custom_Design/Radiant_Azure_Swirl_Pendant.png', dataAiHint: 'ocean wave bracelet' },
+  { id: 'h6', name: 'The Royal Heritage Cabochon Bangle', imgSrc: '/Images/Custom_Design/Royal_Heritage_Cabochon_Bangle.png', dataAiHint: 'galaxy spiral ring' },
 ];
 
 const whyChooseUsItems = [
