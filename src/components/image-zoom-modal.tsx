@@ -8,7 +8,6 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogClose,
 } from '@/components/ui/dialog';
 import { X } from 'lucide-react';
 
@@ -26,7 +25,7 @@ export function ImageZoomModal({ imageUrl, altText, isOpen, onClose }: ImageZoom
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-3xl p-0 overflow-hidden">
+      <DialogContent className="max-w-3xl p-0 overflow-hidden border-border/60">
         <DialogHeader className="sr-only"> {/* Hidden for visual, present for a11y */}
           <DialogTitle>{altText || 'Zoomed Image'}</DialogTitle>
         </DialogHeader>
@@ -43,10 +42,7 @@ export function ImageZoomModal({ imageUrl, altText, isOpen, onClose }: ImageZoom
             }}
           />
         </div>
-        <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-          <X className="h-6 w-6 text-white bg-black/50 rounded-full p-1" />
-          <span className="sr-only">Close</span>
-        </DialogClose>
+        {/* The DialogContent component from shadcn/ui already includes a DialogClose button, so the explicit one below was redundant. */}
       </DialogContent>
     </Dialog>
   );
