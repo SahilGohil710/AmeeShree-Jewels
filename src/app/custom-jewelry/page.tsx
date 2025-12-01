@@ -195,15 +195,29 @@ export default function CustomJewelryPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-primary">Custom Design Highlights</h2>
           <p className="text-lg text-foreground/70 mt-2">Creations born from imagination and artistry.</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-          {highlightDesigns.map((design) => (
-            <div key={design.id} className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-lg group">
-               <Image src={design.imgSrc} alt={design.name} fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint={design.dataAiHint} />
-               <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
-                  <h3 className="text-white font-semibold text-lg drop-shadow-md">{design.name}</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          {/* Column 1 */}
+          <div className="flex flex-col gap-4 md:gap-6">
+            {highlightDesigns.slice(0, 3).map((design) => (
+              <div key={design.id} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg group">
+                 <Image src={design.imgSrc} alt={design.name} fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint={design.dataAiHint} />
+                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
+                    <h3 className="text-white font-semibold text-lg drop-shadow-md">{design.name}</h3>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          {/* Column 2 */}
+          <div className="flex flex-col gap-4 md:gap-6 md:mt-16">
+             {highlightDesigns.slice(3, 6).map((design) => (
+              <div key={design.id} className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg group">
+                 <Image src={design.imgSrc} alt={design.name} fill className="object-cover transition-transform duration-500 group-hover:scale-110" data-ai-hint={design.dataAiHint} />
+                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-start p-4">
+                    <h3 className="text-white font-semibold text-lg drop-shadow-md">{design.name}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
       
