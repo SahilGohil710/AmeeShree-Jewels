@@ -73,7 +73,7 @@ const NecklaceCard = ({ necklace, index, onClick }: { necklace: typeof placehold
       </div>
       <div className="p-4">
         <h3 className="text-lg font-semibold text-primary truncate">{necklace.name}</h3>
-        <p className="text-sm text-foreground/80 mt-1 min-h-[3em]">{necklace.description}</p>
+        <p className="text-sm text-[#f7f3e8] mt-1 min-h-[3em]">{necklace.description}</p>
       </div>
     </div>
   );

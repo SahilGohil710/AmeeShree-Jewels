@@ -74,7 +74,7 @@ const RingCard = ({ ring, index, onClick }: { ring: typeof placeholderRings[0], 
       </div>
       <div className="p-4">
         <h3 className="text-lg font-semibold text-primary truncate">{ring.name}</h3>
-        <p className="text-sm text-foreground/80 mt-1 min-h-[3em]">{ring.description}</p>
+        <p className="text-sm text-[#f7f3e8] mt-1 min-h-[3em]">{ring.description}</p>
       </div>
     </div>
   );
