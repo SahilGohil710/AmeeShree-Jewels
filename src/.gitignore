@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+.firebase/
+
+# Build artifacts
+dist/
+.next/
+out/
+
+# System files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Firebase cache and emulators
+.firebaserc
+firebase-debug.log
+
+# Ignore node_modules directories, which are generated dependencies
+node_modules/
+.firebase/ameeshree-jewels-home/functions/node_modules/
+
+# Ignore the specific large archive file
+project.tar.gz
