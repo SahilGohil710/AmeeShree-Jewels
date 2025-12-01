@@ -59,7 +59,7 @@ const BangleCard = ({ bangle, index, onClick }: { bangle: typeof placeholderBang
           src={bangle.img}
           alt={bangle.name}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-300 ease-in-out group-hover/image:scale-110"
           sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           onError={(e) => {
             (e.target as HTMLImageElement).src = `https://placehold.co/400x400.png`;
@@ -170,5 +170,7 @@ export default function BanglesPage() {
     </div>
   );
 }
+
+    
 
     

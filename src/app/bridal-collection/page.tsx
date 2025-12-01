@@ -170,3 +170,5 @@ export default function BridalCollectionPage() {
     </div>
   );
 }
+
+    
