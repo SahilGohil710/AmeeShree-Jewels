@@ -7,6 +7,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { useEffect, useState } from 'react';
 import { ScrollToTopButton } from '@/components/layout/scroll-to-top-button';
+import { CustomCursor } from '@/components/layout/custom-cursor';
 
 export default function ClientLayoutContent({
   children,
@@ -26,6 +27,7 @@ export default function ClientLayoutContent({
         enableSystem={false}
         disableTransitionOnChange
       >
+        <CustomCursor />
         <div className="fixed inset-0 z-[-1] overflow-hidden">
           <div className="absolute inset-0 sparkling-bg"></div>
         </div>
