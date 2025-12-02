@@ -59,7 +59,7 @@ const EarringCard = ({ earring, index, onClick }: { earring: typeof placeholderE
       style={{ animationDelay }}
     >
       <div
-        className="relative aspect-[4/5] w-full cursor-pointer group/image"
+        className="relative aspect-square w-full cursor-pointer group/image"
         onClick={onClick}
       >
         <Image
@@ -69,7 +69,7 @@ const EarringCard = ({ earring, index, onClick }: { earring: typeof placeholderE
           className="object-cover transition-transform duration-300 ease-in-out group-hover/image:scale-110"
           sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           onError={(e) => {
-            (e.target as HTMLImageElement).src = `https://placehold.co/400x500.png`;
+            (e.target as HTMLImageElement).src = `https://placehold.co/400x400.png`;
             (e.target as HTMLImageElement).srcset = '';
           }}
           priority={index < 4}
