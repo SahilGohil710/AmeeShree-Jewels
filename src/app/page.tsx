@@ -68,7 +68,7 @@ export default function Home() {
              <Link href="/bridal-collection" passHref>
                <Button
                  size="lg"
-                 className="scale-90 animate-scale-in animation-delay-1000 transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg hover:shadow-primary/20"
+                 className="scale-90 animate-scale-in animation-delay-1000 transition-all duration-300 ease-out hover:scale-[1.03] hover:shadow-lg hover:shadow-primary/20 rounded-xl"
                >
                  Explore the Collection
                </Button>
@@ -208,5 +208,3 @@ export default function Home() {
     </div>
   );
 }
-
-    

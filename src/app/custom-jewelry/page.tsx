@@ -88,12 +88,12 @@ export default function CustomJewelryPage() {
                 <h1 className="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">Your Vision, Handcrafted Into a Masterpiece</h1>
                 <p className="text-lg text-foreground/80 max-w-lg mx-auto md:mx-0 mb-8">Have a design in mind? Simply send us your idea, inspiration, or sketch on WhatsApp. Our expert designers will collaborate with you to bring your unique vision to life, crafting a jewel that is exclusively yours.</p>
                  <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                    <Button asChild size="lg" className="w-full sm:w-auto">
+                    <Button asChild size="lg" className="w-full sm:w-auto rounded-xl">
                         <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noopener noreferrer">
                             <BotMessageSquare className="mr-2" /> Request Your Custom Design
                         </a>
                     </Button>
-                    <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+                    <Button asChild variant="outline" size="lg" className="w-full sm:w-auto rounded-xl">
                        <a href={`mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(EMAIL_SUBJECT)}&body=${encodeURIComponent(EMAIL_BODY)}`}>
                            <Mail className="mr-2" /> Email Us Your Idea
                        </a>
@@ -180,7 +180,7 @@ export default function CustomJewelryPage() {
        <div className="max-w-4xl mx-auto text-center py-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Ready to Create Your Custom Jewel?</h2>
           <p className="text-lg text-foreground/70 max-w-xl mx-auto mb-8">Your story deserves to be told in gold and gemstones. Let's start the conversation and bring your vision to life.</p>
-           <Button asChild size="lg">
+           <Button asChild size="lg" className="rounded-xl">
               <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noopener noreferrer">
                   <BotMessageSquare className="mr-2" /> Start Your Design on WhatsApp
               </a>
@@ -201,5 +201,3 @@ export default function CustomJewelryPage() {
     </div>
   );
 }
-
-    

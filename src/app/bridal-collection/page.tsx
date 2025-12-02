@@ -152,7 +152,7 @@ export default function BridalCollectionPage() {
               onClick={handleShowMore}
               variant="outline"
               size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-full px-8 py-3 text-base shadow-md hover:shadow-lg"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200 rounded-xl px-8 py-3 text-base shadow-md hover:shadow-lg"
             >
               Show More
             </Button>
@@ -170,5 +170,3 @@ export default function BridalCollectionPage() {
     </div>
   );
 }
-
-    
