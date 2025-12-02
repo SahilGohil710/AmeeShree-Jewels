@@ -146,7 +146,13 @@ export default {
     require("tailwindcss-animate"),
     function({ addUtilities, theme }: { addUtilities: Function, theme: Function }) {
       const newUtilities: { [key: string]: any } = {};
-      const animationDelay = theme('animationDelay');
+      const animationDelay = {
+        '200': '200ms',
+        '400': '400ms',
+        '600': '600ms',
+        '800': '800ms',
+        '1000': '1000ms',
+      };
       if (animationDelay) {
         Object.entries(animationDelay).forEach(([key, value]) => {
           newUtilities[`.animation-delay-${key}`] = {
