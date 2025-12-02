@@ -40,7 +40,7 @@ const customerReviews = [
 
 
 export default function Home() {
-   const reviewsPlugin = React.useRef(Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true }));
+   const reviewsPlugin = React.useRef(Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }));
 
   return (
     <div className="flex flex-col items-center justify-center space-y-16 py-16 px-4 md:px-6">
@@ -152,56 +152,58 @@ export default function Home() {
       <InspirationalJewelrySection />
 
       {/* Customer Reviews Section */}
-      <div className="w-full max-w-6xl pt-12">
-        <Separator className="bg-border/50 mb-12" />
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary mb-3">
-            What Our Customers Say
-          </h2>
-          <p className="text-md md:text-lg text-foreground/70 max-w-2xl mx-auto">
-            Hear from those who have experienced the elegance of AmeeShree Jewels.
-          </p>
-        </div>
+        <div className="w-full max-w-7xl pt-12">
+            <Separator className="bg-border/50 mb-16" />
+            <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-3">
+                    What Our Customers Say
+                </h2>
+                <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+                    Hear from those who have experienced the elegance of AmeeShree Jewels.
+                </p>
+            </div>
 
-        <Carousel
-          plugins={[reviewsPlugin.current]}
-          className="w-full relative"
-          opts={{
-            loop: true,
-            align: "start",
-          }}
-        >
-          <CarouselContent className="-ml-4">
-            {customerReviews.map((review) => (
-              <CarouselItem key={review.id} className="pl-4 md:basis-1/2 lg:basis-1/3">
-                 <Card className="h-full border-border/60 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg bg-card/80 backdrop-blur-sm">
-                   <CardContent className="p-6 flex flex-col items-center text-center space-y-4">
-                     <Avatar className="w-16 h-16 border-2 border-primary">
-                       <AvatarFallback className="bg-primary/20 text-primary font-semibold text-xl">
-                         {review.avatar}
-                       </AvatarFallback>
-                     </Avatar>
-                     <div className="flex space-x-1 text-primary">
-                       {[...Array(review.rating)].map((_, i) => (
-                         <Gem key={i} className="h-5 w-5 fill-current" />
-                       ))}
-                       {[...Array(5 - review.rating)].map((_, i) => (
-                          <Gem key={`empty-${i}`} className="h-5 w-5 text-muted-foreground/50" />
-                       ))}
-                     </div>
-                      <blockquote className="text-base text-foreground/80 italic leading-relaxed">
-                        &quot;{review.quote}&quot;
-                      </blockquote>
-                      <p className="font-semibold text-foreground text-sm pt-2">- {review.name}</p>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="absolute left-[-1rem] md:left-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-primary text-primary hover:text-primary-foreground border border-primary rounded-full shadow-lg disabled:opacity-30 transition-all duration-200 w-10 h-10" />
-          <CarouselNext className="absolute right-[-1rem] md:right-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-primary text-primary hover:text-primary-foreground border border-primary rounded-full shadow-lg disabled:opacity-30 transition-all duration-200 w-10 h-10" />
-        </Carousel>
-      </div>
+            <Carousel
+                plugins={[reviewsPlugin.current]}
+                className="w-full relative"
+                opts={{
+                    loop: true,
+                    align: "start",
+                }}
+            >
+                <CarouselContent className="-ml-4 pb-12">
+                    {customerReviews.map((review) => (
+                        <CarouselItem key={review.id} className="pl-6 md:basis-1/2 lg:basis-1/3">
+                            <div className="h-full flex flex-col items-center justify-center pt-8">
+                                <Card className="relative w-full max-w-sm border-primary/20 bg-card/50 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-primary/10 transition-all duration-300">
+                                    <CardContent className="p-8 text-center flex flex-col items-center">
+                                        <Avatar className="w-20 h-20 border-4 border-background absolute -top-10 shadow-xl">
+                                            <AvatarFallback className="bg-primary/20 text-primary font-semibold text-2xl">
+                                                {review.avatar}
+                                            </AvatarFallback>
+                                        </Avatar>
+                                        <div className="mt-12 flex space-x-1 text-primary">
+                                            {[...Array(review.rating)].map((_, i) => (
+                                                <Gem key={i} className="h-5 w-5 fill-current" />
+                                            ))}
+                                            {[...Array(5 - review.rating)].map((_, i) => (
+                                                <Gem key={`empty-${i}`} className="h-5 w-5 text-muted-foreground/30" />
+                                            ))}
+                                        </div>
+                                        <blockquote className="text-base text-foreground/80 italic leading-relaxed mt-4 min-h-[100px]">
+                                            &quot;{review.quote}&quot;
+                                        </blockquote>
+                                        <p className="font-semibold text-foreground text-md mt-4">- {review.name}</p>
+                                    </CardContent>
+                                </Card>
+                            </div>
+                        </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="absolute left-[-1rem] md:left-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-primary text-primary hover:text-primary-foreground border border-primary rounded-full shadow-lg disabled:opacity-30 transition-all duration-200 w-10 h-10" />
+                <CarouselNext className="absolute right-[-1rem] md:right-[-2rem] top-1/2 -translate-y-1/2 z-10 bg-background/80 hover:bg-primary text-primary hover:text-primary-foreground border border-primary rounded-full shadow-lg disabled:opacity-30 transition-all duration-200 w-10 h-10" />
+            </Carousel>
+        </div>
 
     </div>
   );
