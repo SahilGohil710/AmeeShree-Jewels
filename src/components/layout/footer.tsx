@@ -37,6 +37,7 @@ export function Footer() {
               <li><Link href="/" className="text-foreground/80 hover:text-primary transition-colors duration-150">Home</Link></li>
               <li><Link href="/about" className="text-foreground/80 hover:text-primary transition-colors duration-150">About Us</Link></li>
               <li><Link href="/contact" className="text-foreground/80 hover:text-primary transition-colors duration-150">Contact Us</Link></li>
+              <li><Link href="/custom-jewelry" className="text-foreground/80 hover:text-primary transition-colors duration-150">Custom Jewelry</Link></li>
             </ul>
           </div>
 
@@ -56,16 +57,17 @@ export function Footer() {
           {/* Social & Contact */}
           <div className="space-y-3">
              <h4 className="text-base font-semibold text-primary mb-3 uppercase tracking-wider">Connect</h4>
-              <div className="space-y-1 text-foreground/70 mb-4">
-                 <p>Panchratna, Opera House, Mumbai, MH 400004</p>
+              <div className="space-y-2 text-foreground/70 mb-4">
+                 <p>Mumbai Studio, Charni Road East</p>
+                 <p>Surat Studio, Katargam</p>
                  <p>
-                    <a href="mailto:ameeshree.jewels@gmail.com" className="hover:text-primary transition-colors duration-150">
-                     ameeshree.jewels@gmail.com
+                    <a href="mailto:support@ameeshreejewels.com" className="hover:text-primary transition-colors duration-150">
+                     support@ameeshreejewels.com
                     </a>
                  </p>
                  <p>
                    <a href="tel:+919819264909" className="hover:text-primary transition-colors duration-150"> 
-                     +91 9819264909
+                     +91 98192 64909
                    </a>
                  </p>
               </div>
