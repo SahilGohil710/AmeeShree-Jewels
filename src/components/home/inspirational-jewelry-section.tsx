@@ -129,7 +129,7 @@ export default function InspirationalJewelrySection() {
   }, [isMobile]);
 
   return (
-    <div className="w-full max-w-6xl py-16 px-4 md:px-6">
+    <div className="w-full max-w-6xl py-16 md:py-24 px-4 md:px-6">
       <div className="text-center mb-12">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary mb-3">
           The Essence of Elegance
@@ -144,57 +144,57 @@ export default function InspirationalJewelrySection() {
         </Link>
       </div>
 
-      {/* Desktop Layout: Sticky Image & Scrolling Text */}
-      <div className="hidden md:grid md:grid-cols-2 gap-8 md:gap-12 items-start" ref={sectionRef}>
-        <div className="sticky top-1/4 md:top-[calc(25vh)] h-[50vh] md:h-[60vh]">
-          <div className="relative w-full h-full rounded-lg overflow-hidden shadow-xl border border-primary/30">
+      {isMobile ? (
+        <div className="md:hidden space-y-12">
+          {inspirationalContent.map((item) => (
+            <MobileInspirationItem key={`${item.id}-mobile`} item={item} />
+          ))}
+        </div>
+      ) : (
+        <div className="hidden md:grid md:grid-cols-2 gap-8 md:gap-12 items-start" ref={sectionRef}>
+          <div className="sticky top-1/4 md:top-[calc(25vh)] h-[50vh] md:h-[60vh]">
+            <div className="relative w-full h-full rounded-lg overflow-hidden shadow-xl border border-primary/30">
+              {inspirationalContent.map((item, index) => (
+                <Image
+                  key={item.id}
+                  src={item.imageSrc}
+                  alt={item.imageAlt}
+                  fill
+                  sizes="50vw"
+                  className={cn(
+                    "object-cover transition-opacity duration-1000 ease-in-out absolute inset-0",
+                    index === activeIndex ? "opacity-100" : "opacity-0"
+                  )}
+                  data-ai-hint={item.dataAiHint}
+                  priority={index === 0}
+                  onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/800x1000.png`; (e.target as HTMLImageElement).srcset = '' }}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="relative flex flex-col space-y-[60vh]">
             {inspirationalContent.map((item, index) => (
-              <Image
-                key={item.id}
-                src={item.imageSrc}
-                alt={item.imageAlt}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className={cn(
-                  "object-cover transition-opacity duration-1000 ease-in-out absolute inset-0",
-                  index === activeIndex ? "opacity-100" : "opacity-0"
-                )}
-                data-ai-hint={item.dataAiHint}
-                priority={index === 0}
-                onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/800x1000.png`; (e.target as HTMLImageElement).srcset = '' }}
-              />
+              <div
+                key={`${item.id}-text`}
+                className="scroll-trigger h-[80vh] flex items-center"
+                data-index={index}
+              >
+                <div
+                  className={cn(
+                    "transition-all duration-1000 ease-out p-4",
+                    index === activeIndex
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-5"
+                  )}
+                >
+                  <h3 className="text-2xl lg:text-3xl font-semibold text-primary mb-3 drop-shadow-sm">{item.title}</h3>
+                  <p className="text-md lg:text-lg text-foreground/80 leading-relaxed">{item.text}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-        <div className="relative flex flex-col space-y-[60vh]">
-          {inspirationalContent.map((item, index) => (
-            <div
-              key={`${item.id}-text`}
-              className="scroll-trigger h-[80vh] flex items-center"
-              data-index={index}
-            >
-              <div
-                className={cn(
-                  "transition-all duration-1000 ease-out p-4",
-                  index === activeIndex
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-5"
-                )}
-              >
-                <h3 className="text-2xl lg:text-3xl font-semibold text-primary mb-3 drop-shadow-sm">{item.title}</h3>
-                <p className="text-md lg:text-lg text-foreground/80 leading-relaxed">{item.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Mobile Layout: Stacked Content with Animation */}
-      <div className="md:hidden space-y-12">
-        {inspirationalContent.map((item) => (
-          <MobileInspirationItem key={`${item.id}-mobile`} item={item} />
-        ))}
-      </div>
+      )}
 
       <Separator className="bg-border/50 mt-16" />
     </div>

@@ -6,10 +6,10 @@ import { Gem } from 'lucide-react';
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto max-w-5xl py-16 px-4 md:px-6">
-      <div className="space-y-12">
+    <div className="container mx-auto max-w-5xl py-16 md:py-24 px-4 md:px-6">
+      <div className="space-y-12 md:space-y-16">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-4 drop-shadow-sm">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary mb-4 drop-shadow-sm">
             Where Color-Rich Diamonds Meet Timeless Craftsmanship
           </h1>
         </div>
@@ -31,7 +31,7 @@ export default function AboutPage() {
             </CardContent>
           </Card>
           <div className="space-y-4">
-            <h2 className="text-3xl font-semibold text-primary flex items-center gap-2">
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary flex items-center gap-2">
               <Gem className="h-6 w-6 text-primary" />
               Our Story
             </h2>
@@ -45,7 +45,7 @@ export default function AboutPage() {
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div className="space-y-4 md:order-last">
-             <h2 className="text-3xl font-semibold text-primary flex items-center gap-2">
+             <h2 className="text-2xl md:text-3xl font-semibold text-primary flex items-center gap-2">
                <Gem className="h-6 w-6 text-primary" />
                What Makes Us Different
              </h2>
@@ -74,7 +74,7 @@ export default function AboutPage() {
         <Separator className="bg-border/50" />
         
         <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-semibold text-primary">Our Craft</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary">Our Craft</h2>
             <p className="text-base text-foreground/90 leading-relaxed max-w-3xl mx-auto">
                 Every AmeeShree design begins with a concept: a mood, a color story, a spark of inspiration. Our process involves hand-sketching, gemstone selection, structural refinement, and final polishing — ensuring the perfect balance of art and engineering. We prioritize quality materials, skilled workmanship, and strict attention to detail at every stage.
             </p>
@@ -83,23 +83,23 @@ export default function AboutPage() {
         <Separator className="bg-border/50" />
 
         <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-semibold text-primary">Our Values</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary">Our Values</h2>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-4">
-                <div className="text-center">
+                <div className="text-center p-2">
                     <h3 className="text-xl font-semibold text-primary">Authenticity</h3>
-                    <p className="text-foreground/80">Transparent, honest craftsmanship.</p>
+                    <p className="text-foreground/80 text-sm">Transparent, honest craftsmanship.</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-2">
                     <h3 className="text-xl font-semibold text-primary">Design First</h3>
-                    <p className="text-foreground/80">Bold forms, rich palettes, and expressive silhouettes.</p>
+                    <p className="text-foreground/80 text-sm">Bold forms, rich palettes, and expressive silhouettes.</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-2">
                     <h3 className="text-xl font-semibold text-primary">Quality</h3>
-                    <p className="text-foreground/80">Stones and metals chosen with careful selection and grading.</p>
+                    <p className="text-foreground/80 text-sm">Stones and metals chosen with careful selection and grading.</p>
                 </div>
-                <div className="text-center">
+                <div className="text-center p-2">
                     <h3 className="text-xl font-semibold text-primary">Uniqueness</h3>
-                    <p className="text-foreground/80">We create pieces meant to feel personal and unforgettable.</p>
+                    <p className="text-foreground/80 text-sm">We create pieces meant to feel personal and unforgettable.</p>
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@ export default function AboutPage() {
         <Separator className="bg-border/50" />
         
         <div className="space-y-4 text-center">
-            <h2 className="text-3xl font-semibold text-primary">A Modern Luxury Experience</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary">A Modern Luxury Experience</h2>
             <p className="text-base text-foreground/90 leading-relaxed max-w-3xl mx-auto">
                 AmeeShree Jewels blends traditional craftsmanship with modern design language to create jewelry that resonates with today’s generation — aesthetic, meaningful, and timeless. Whether worn daily or saved for life’s most important moments, each piece is created to carry emotion, elegance, and individuality.
             </p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
         <Separator className="bg-border/50" />
 
         <div className="text-center">
-            <h2 className="text-3xl font-semibold text-primary">Invitation</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary">Invitation</h2>
             <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed pt-4">
                 Explore our collections and experience the artistry behind every creation. Your next masterpiece is waiting.
             </p>

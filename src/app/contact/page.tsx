@@ -27,10 +27,10 @@ const branches: BranchInfo[] = [
 
 export default function ContactPage() {
   return (
-    <div className="container mx-auto max-w-7xl py-16 px-4 md:px-6">
-      <div className="space-y-12">
+    <div className="container mx-auto max-w-7xl py-16 md:py-24 px-4 md:px-6">
+      <div className="space-y-12 md:space-y-16">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-4 drop-shadow-sm">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary mb-4 drop-shadow-sm">
             We’re Here to Help
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
@@ -42,30 +42,30 @@ export default function ContactPage() {
         
         <div className="space-y-12"> 
           <div>
-            <h2 className="text-3xl font-semibold text-primary mb-8 text-center">Direct Contact Options</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-8 text-center">Direct Contact Options</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 text-center">
               <div className="space-y-2">
                 <Phone className="h-8 w-8 text-primary mx-auto" />
                 <h3 className="text-xl font-semibold text-primary">Phone</h3>
-                <p className="text-foreground/80"><a href="tel:+919819264909" className="hover:underline">Mumbai: +91 98192 64909</a></p>
-                <p className="text-foreground/80"><a href="tel:+919819290009" className="hover:underline">Surat: +91 98192 90009</a></p>
+                <p className="text-foreground/80 text-sm md:text-base"><a href="tel:+919819264909" className="hover:underline">Mumbai: +91 98192 64909</a></p>
+                <p className="text-foreground/80 text-sm md:text-base"><a href="tel:+919819290009" className="hover:underline">Surat: +91 98192 90009</a></p>
               </div>
               <div className="space-y-2">
                 <Mail className="h-8 w-8 text-primary mx-auto" />
                 <h3 className="text-xl font-semibold text-primary">Email</h3>
-                <p className="text-foreground/80"><a href="mailto:support@ameeshreejewels.com" className="hover:underline">support@ameeshreejewels.com</a></p>
+                <p className="text-foreground/80 text-sm md:text-base"><a href="mailto:support@ameeshreejewels.com" className="hover:underline">support@ameeshreejewels.com</a></p>
               </div>
               <div className="space-y-2">
                 <MessageSquare className="h-8 w-8 text-primary mx-auto" />
                 <h3 className="text-xl font-semibold text-primary">WhatsApp</h3>
-                <p className="text-foreground/80"><a href="https://wa.me/919819264909" target="_blank" rel="noopener noreferrer" className="hover:underline">Instant support and quick replies</a></p>
+                <p className="text-foreground/80 text-sm md:text-base"><a href="https://wa.me/919819264909" target="_blank" rel="noopener noreferrer" className="hover:underline">Instant support and quick replies</a></p>
               </div>
             </div>
             
             <Separator className="my-8 bg-border/40" />
 
-            <h2 className="text-3xl font-semibold text-primary mb-8 text-center">Store Locations</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-8 text-center">Store Locations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               {branches.map((branch) => (
                 <div key={branch.name} className="space-y-3 border border-border/30 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full bg-card">
@@ -81,7 +81,7 @@ export default function ContactPage() {
             <Separator className="my-8 bg-border/40" />
 
             <div className="text-center space-y-4">
-                <h2 className="text-3xl font-semibold text-primary">Business Hours</h2>
+                <h2 className="text-2xl md:text-3xl font-semibold text-primary">Business Hours</h2>
                 <div>
                     <p className="text-foreground/80">Monday – Saturday: 10:30 AM to 7:30 PM</p>
                     <p className="text-foreground/80">Sunday: Closed</p>
@@ -91,7 +91,7 @@ export default function ContactPage() {
             <Separator className="my-8 bg-border/40" />
 
             <div className="text-center space-y-4">
-              <h2 className="text-3xl font-semibold text-primary">Follow Us</h2>
+              <h2 className="text-2xl md:text-3xl font-semibold text-primary">Follow Us</h2>
               <p className="text-foreground/80">Stay connected with updates, new arrivals, and behind-the-scenes content.</p>
               <div className="flex justify-center gap-6 pt-2">
                 <a href="https://www.instagram.com/ameeshreejewels?igsh=MTE4Z3BxM29zOTRycw==" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">

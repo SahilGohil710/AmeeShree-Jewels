@@ -60,7 +60,7 @@ const BridalSetCard = ({ set, index, onClick }: { set: typeof placeholderBridalS
           alt={set.name}
           fill
           className="object-cover transition-transform duration-300 ease-in-out group-hover/image:scale-110"
-          sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           data-ai-hint={set.dataAiHint}
           onError={(e) => {
             (e.target as HTMLImageElement).src = `https://placehold.co/400x400.png`;
@@ -108,10 +108,10 @@ export default function BridalCollectionPage() {
   };
 
   return (
-    <div className="container mx-auto max-w-6xl py-16 px-4 md:px-6">
+    <div className="container mx-auto max-w-6xl py-16 md:py-24 px-4 md:px-6">
       <div className="space-y-12">
         <div className="text-center">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-4 drop-shadow-sm">
+          <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-primary mb-4 drop-shadow-sm">
             Bridal Collection
           </h1>
           <p className="text-lg md:text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
@@ -131,7 +131,7 @@ export default function BridalCollectionPage() {
           />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {filteredBridalSets.length === 0 && searchTerm && (
             <p className="text-center text-foreground/70 col-span-full">
               No bridal sets found matching your search criteria.

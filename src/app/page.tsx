@@ -43,7 +43,7 @@ export default function Home() {
    const reviewsPlugin = React.useRef(Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true }));
 
   return (
-    <div className="flex flex-col items-center justify-center space-y-16 py-16 px-4 md:px-6">
+    <div className="flex flex-col items-center justify-center space-y-16 md:space-y-24 py-16 px-4 md:px-6">
        {/* Hero Section */}
        <div className="relative w-full min-h-[80vh] flex items-center justify-center text-center overflow-hidden">
          <div className="absolute inset-0">
@@ -155,7 +155,7 @@ export default function Home() {
         <div className="w-full max-w-7xl pt-12">
             <Separator className="bg-border/50 mb-16" />
             <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-primary mb-3">
+                <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-primary mb-3">
                     What Our Customers Say
                 </h2>
                 <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
