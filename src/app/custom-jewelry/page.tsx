@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -71,7 +72,7 @@ const whyChooseUsItems = [
     }
 ];
 
-const WHATSAPP_NUMBER = '919727607178';
+const WHATSAPP_NUMBER = '919819264909';
 const WHATSAPP_MESSAGE = "Hi, I'm interested in creating a custom jewelry piece. Please assist me with the design process.";
 const EMAIL_ADDRESS = 'support@ameeshreejewels.com';
 const EMAIL_SUBJECT = 'Custom Jewellery Request – AmeeShree Jewels';

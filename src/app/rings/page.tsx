@@ -47,7 +47,7 @@ const RingCard = ({ ring, index, onClick }: { ring: typeof placeholderRings[0], 
     <div
       ref={ref}
       className={cn(
-        "bg-[#111111] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-transform transition-shadow duration-300 ease-out hover:scale-105 opacity-0",
+        "bg-[#111111] rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 ease-out hover:scale-105 opacity-0",
         isIntersecting && "animate-fade-up"
       )}
       style={{ animationDelay }}

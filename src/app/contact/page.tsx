@@ -48,8 +48,8 @@ export default function ContactPage() {
               <div className="space-y-2">
                 <Phone className="h-8 w-8 text-primary mx-auto" />
                 <h3 className="text-xl font-semibold text-primary">Phone</h3>
-                <p className="text-foreground/80"><a href="tel:+919820365033" className="hover:underline">Mumbai: +91 98203 65033</a></p>
-                <p className="text-foreground/80"><a href="tel:+918980354381" className="hover:underline">Surat: +91 89803 54381</a></p>
+                <p className="text-foreground/80"><a href="tel:+919819264909" className="hover:underline">Mumbai: +91 98192 64909</a></p>
+                <p className="text-foreground/80"><a href="tel:+919819290009" className="hover:underline">Surat: +91 98192 90009</a></p>
               </div>
               <div className="space-y-2">
                 <Mail className="h-8 w-8 text-primary mx-auto" />
