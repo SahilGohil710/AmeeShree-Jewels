@@ -60,7 +60,7 @@ const BridalSetCard = ({ set, index, onClick }: { set: typeof placeholderBridalS
           alt={set.name}
           fill
           className="object-cover transition-transform duration-300 ease-in-out group-hover/image:scale-110"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           data-ai-hint={set.dataAiHint}
           onError={(e) => {
             (e.target as HTMLImageElement).src = `https://placehold.co/400x400.png`;
@@ -131,7 +131,7 @@ export default function BridalCollectionPage() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
           {filteredBridalSets.length === 0 && searchTerm && (
             <p className="text-center text-foreground/70 col-span-full">
               No bridal sets found matching your search criteria.

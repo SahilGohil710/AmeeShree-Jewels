@@ -22,7 +22,7 @@ const placeholderBangles = [
   { id: 'b8', name: 'Infinity Phool', price: '$720', img: '/Images/Bangles/Infinity_Phool.png', description: 'Luxurious gold bangles with intricate floral patterns, adorned with brilliant white and yellow diamonds.' },
   { id: 'b9', name: 'Royal Lotus Halo', price: '$2,950', img: '/Images/Bangles/Royal_Lotus_Halo.png', description: 'Exquisite gold bangles featuring intricate lotus designs adorned with sparkling diamonds and subtle pink gems.' },
   { id: 'b10', name: 'Chakra Gleam', price: '$1,500', img: '/Images/Bangles/Chakra_Gleam.png', description: 'Elegant gold bangles featuring circular diamond clusters with ruby, emerald, and sapphire centers.' },
-  { id: 'b11', name: 'Peacock Parade Sapphire Emerald', price: '$1,950', img: '/Images/Bangles/Peacock_Parade_Sapphire_Emerald_Bangle.png', description: 'Luxurious gold bangle adorned with brilliant diamonds, vibrant emeralds, and deep blue sapphires in a peacock-inspired design.' },
+  { id: 'b11', name: 'Peacock Parade Sapphire Emerald', price: '$1.950', img: '/Images/Bangles/Peacock_Parade_Sapphire_Emerald_Bangle.png', description: 'Luxurious gold bangle adorned with brilliant diamonds, vibrant emeralds, and deep blue sapphires in a peacock-inspired design.' },
   { id: 'b12', name: 'Sunset Spectrum', price: '$350', img: '/Images/Bangles/Sunset_Spectrum.png', description: 'Ornate gold bangles heavily studded with vibrant orange-red and sparkling white gemstones.' },
   { id: 'b13', name: 'Gulab Motif Bangle', price: '$1,200', img: '/Images/Bangles/Gulab_Motif_Bangle.png', description: 'Exquisite gold bangle intricately designed with rose motifs, adorned with pink and white diamonds.' },
   { id: 'b14', name: 'Whispering Leaves Bangle', price: '$3,400', img: '/Images/Bangles/Whispering_Leaves_Bangle.png', description: 'Elegant rose gold bangle featuring delicate leaf motifs encrusted with sparkling pave diamonds.' },
@@ -60,7 +60,7 @@ const BangleCard = ({ bangle, index, onClick }: { bangle: typeof placeholderBang
           alt={bangle.name}
           fill
           className="object-cover transition-transform duration-300 ease-in-out group-hover/image:scale-110"
-          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+          sizes="(max-width: 640px) 50vw, (max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
           onError={(e) => {
             (e.target as HTMLImageElement).src = `https://placehold.co/400x400.png`;
             (e.target as HTMLImageElement).srcset = '';
@@ -130,7 +130,7 @@ export default function BanglesPage() {
           />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8">
           {filteredBangles.length === 0 && searchTerm && (
             <p className="text-center text-foreground/70 col-span-full">
               No bangles or bracelets found matching your search criteria.
