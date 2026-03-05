@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Separator } from '@/components/ui/separator';
@@ -15,13 +14,13 @@ interface BranchInfo {
 const branches: BranchInfo[] = [
   {
     name: 'Mumbai Studio',
-    address: 'Shop No. 07, Radha Krishna Niwas, D.M. Road, Near Sukh Sagar Medical, Charni Road East, Mumbai – 400004',
-    directionsUrl: 'https://maps.app.goo.gl/u9JMsEneGLif7Sfx5',
+    address: '47/A, SHREEJI ARCADE, GROUND FLOOR, OPP. PRASAD CHEMBERS, TATA ROAD NO. 2, CHARNI ROAD EAST, MUMBAI 400004.',
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=47/A,+SHREEJI+ARCADE,+GROUND+FLOOR,+OPP.+PRASAD+CHEMBERS,+TATA+ROAD+NO.+2,+CHARNI+ROAD+EAST,+MUMBAI+400004',
   },
   {
     name: 'Surat Studio',
-    address: '203, 2nd Floor, Ratna Deep Apartment, Muktanand Nagar, Katargam, Surat – 395004',
-    directionsUrl: 'https://maps.app.goo.gl/exampleSurat', 
+    address: '501, JIN RATNA, 5th FLOOR, PIPLASHERI, MAHIDHARPURA, SURAT 395003',
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=501,+JIN+RATNA,+5th+FLOOR,+PIPLASHERI,+MAHIDHARPURA,+SURAT+395003', 
   },
 ];
 
@@ -39,7 +38,7 @@ export default function ContactPage() {
           </p>
             <div className="mt-8">
             <Link href="/book-appointment">
-              <Button size="lg">Book an Appointment</Button>
+              <Button size="lg" className="rounded-xl shadow-md hover:shadow-lg transition-all">Book an Appointment</Button>
             </Link>
           </div>
         </div>
@@ -74,10 +73,10 @@ export default function ContactPage() {
             <h2 className="text-2xl md:text-3xl font-semibold text-primary mb-8 text-center">Store Locations</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
               {branches.map((branch) => (
-                <div key={branch.name} className="space-y-3 border border-border/30 p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow flex flex-col h-full bg-card">
+                <div key={branch.name} className="space-y-3 border border-border/30 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col h-full bg-card/50 backdrop-blur-sm">
                   <h3 className="text-xl font-semibold text-primary flex items-center gap-2"><MapPin className="h-5 w-5 text-primary" />{branch.name}</h3>
-                  <p className="text-sm text-foreground/80">{branch.address}</p>
-                  <Link href={branch.directionsUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-primary hover:underline mt-auto">
+                  <p className="text-sm md:text-base text-foreground/80 leading-relaxed">{branch.address}</p>
+                  <Link href={branch.directionsUrl} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline mt-auto inline-flex items-center gap-1 font-medium">
                     Get Directions
                   </Link>
                 </div>
@@ -88,9 +87,9 @@ export default function ContactPage() {
 
             <div className="text-center space-y-4">
                 <h2 className="text-2xl md:text-3xl font-semibold text-primary">Business Hours</h2>
-                <div>
-                    <p className="text-foreground/80">Monday – Saturday: 10:30 AM to 7:30 PM</p>
-                    <p className="text-foreground/80">Sunday: Closed</p>
+                <div className="text-foreground/80 text-lg">
+                    <p>Monday – Saturday: 10:30 AM to 7:30 PM</p>
+                    <p>Sunday: Closed</p>
                 </div>
             </div>
 
@@ -98,13 +97,13 @@ export default function ContactPage() {
 
             <div className="text-center space-y-4">
               <h2 className="text-2xl md:text-3xl font-semibold text-primary">Follow Us</h2>
-              <p className="text-foreground/80">Stay connected with updates, new arrivals, and behind-the-scenes content.</p>
-              <div className="flex justify-center gap-6 pt-2">
-                <a href="https://www.instagram.com/_ameeshree.jewels_?igsh=MTE4Z3BxM29zOTRycw==" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                  <Instagram className="h-7 w-7" />
+              <p className="text-foreground/80 max-w-lg mx-auto leading-relaxed">Stay connected with updates, new arrivals, and behind-the-scenes content.</p>
+              <div className="flex justify-center gap-8 pt-4">
+                <a href="https://www.instagram.com/_ameeshree.jewels_?igsh=MTE4Z3BxM29zOTRycw==" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-transform hover:scale-110" aria-label="Instagram">
+                  <Instagram className="h-8 w-8" />
                 </a>
-                <a href="https://wa.me/919819264909" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
-                   <MessageSquare className="h-7 w-7" />
+                <a href="https://wa.me/919819264909" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-transform hover:scale-110" aria-label="WhatsApp">
+                   <MessageSquare className="h-8 w-8" />
                 </a>
               </div>
             </div>
