@@ -1,4 +1,3 @@
-
 "use server";
 
 import { z } from "zod";
@@ -66,7 +65,7 @@ Submitted from website: ameeshreejewels.com
   
     await transporter.sendMail({
       from: `"AmeeShree Jewels Website" <${process.env.EMAIL_USER}>`,
-      to: "ameeshree.jewels@gmail.com",
+      to: "gohilsammy@gmail.com",
       subject: subject,
       text: body,
     });
