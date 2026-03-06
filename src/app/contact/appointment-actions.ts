@@ -15,23 +15,36 @@ const appointmentSchema = z.object({
 
 export async function submitAppointment(formData: FormData) {
   try {
-    const data = Object.fromEntries(formData.entries());
+    const rawData = Object.fromEntries(formData.entries());
+    
+    // Safety check before Date manipulation to prevent RangeError
+    if (!rawData.preferredDate) {
+      return { success: false, message: "Preferred date is required." };
+    }
+
+    const dateStr = rawData.preferredDate as string;
+    const dateObj = new Date(dateStr);
+    
+    if (isNaN(dateObj.getTime())) {
+      return { success: false, message: "Invalid date provided." };
+    }
+
     const parsed = appointmentSchema.parse({
-      ...data,
-      preferredDate: new Date(data.preferredDate as string).toISOString(),
+      ...rawData,
+      preferredDate: dateObj.toISOString(),
     });
 
-    console.log("New Appointment Request:", parsed);
+    console.log("Contact Page Appointment Request:", parsed);
 
-    // Here you would typically send an email
-    // For example, using a service like Resend or Nodemailer
-    // e.g., await sendEmail({ to: 'admin@ameeshreejewels.com', ... });
-
-    return { success: true, message: "Appointment request submitted successfully. We will contact you shortly." };
-  } catch (error) {
+    return { 
+      success: true, 
+      message: "Appointment request submitted successfully. We will contact you shortly." 
+    };
+  } catch (error: any) {
+    console.error("SERVER ACTION ERROR [contact/submitAppointment]:", error);
     if (error instanceof z.ZodError) {
       return { success: false, message: "Validation failed", errors: error.flatten().fieldErrors };
     }
-    return { success: false, message: "An unexpected error occurred. Please try again." };
+    return { success: false, message: "An unexpected error occurred. Please try again later." };
   }
 }

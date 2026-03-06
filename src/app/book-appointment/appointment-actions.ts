@@ -1,3 +1,4 @@
+
 "use server";
 
 import { z } from "zod";
@@ -19,26 +20,27 @@ const appointmentSchema = z.object({
 type AppointmentFormValues = z.infer<typeof appointmentSchema>;
 
 export async function submitAppointment(data: AppointmentFormValues) {
-  const validatedFields = appointmentSchema.safeParse(data);
+  try {
+    const validatedFields = appointmentSchema.safeParse(data);
 
-  if (!validatedFields.success) {
-    return {
-      success: false,
-      message: "Invalid form data.",
-      errors: validatedFields.error.flatten().fieldErrors,
+    if (!validatedFields.success) {
+      return {
+        success: false,
+        message: "Invalid form data. Please check the fields and try again.",
+        errors: validatedFields.error.flatten().fieldErrors,
+      };
+    }
+
+    const { name, phone, email, preferredDate, preferredTime, visitType } = validatedFields.data;
+    
+    const visitTypeMap: { [key: string]: string } = {
+      "store-visit": "Store Visit",
+      "video-consultation": "Video Consultation",
+      "custom-design-discussion": "Custom Design Discussion",
     };
-  }
 
-  const { name, phone, email, preferredDate, preferredTime, visitType } = validatedFields.data;
-  
-  const visitTypeMap: { [key: string]: string } = {
-    "store-visit": "Store Visit",
-    "video-consultation": "Video Consultation",
-    "custom-design-discussion": "Custom Design Discussion",
-  };
-
-  const subject = "New Appointment Request – AmeeShree Jewels";
-  const body = `
+    const subject = "New Appointment Request – AmeeShree Jewels";
+    const body = `
 New Appointment Request
 
 Customer Details:
@@ -52,19 +54,30 @@ Preferred Time: ${preferredTime}
 Visit Type: ${visitTypeMap[visitType]}
 
 Submitted from website: ameeshreejewels.com
-  `.trim();
+    `.trim();
 
-  try {
+    // Defensive check for environment variables
+    const emailUser = process.env.EMAIL_USER;
+    const emailPass = process.env.EMAIL_PASS;
+
+    if (!emailUser || !emailPass) {
+      console.error("[CRITICAL] Missing EMAIL_USER or EMAIL_PASS environment variables.");
+      // Fallback for production: Return success but log the failure internally 
+      // so the user isn't stuck if it's just an email notification failure.
+      // However, for strict requirements, we report a server error.
+      throw new Error("SMTP Configuration missing");
+    }
+
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: emailUser,
+        pass: emailPass,
       },
     });
   
     await transporter.sendMail({
-      from: `"AmeeShree Jewels Website" <${process.env.EMAIL_USER}>`,
+      from: `"AmeeShree Jewels Website" <${emailUser}>`,
       to: "gohilsammy@gmail.com",
       subject: subject,
       text: body,
@@ -75,11 +88,17 @@ Submitted from website: ameeshreejewels.com
       message:
         "Your appointment request has been sent successfully. Our team will contact you shortly.",
     };
-  } catch (error) {
-    console.error("Email sending failed:", error);
+  } catch (error: any) {
+    // Log detailed server error for Firebase logs
+    console.error("SERVER ACTION ERROR [submitAppointment]:", {
+      message: error.message,
+      stack: error.stack,
+      timestamp: new Date().toISOString()
+    });
+
     return {
       success: false,
-      message: "There was a problem sending your request. Please try again later.",
+      message: "Our server is currently experiencing issues. Please try booking via WhatsApp or try again later.",
     };
   }
 }
