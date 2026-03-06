@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -74,7 +73,7 @@ const whyChooseUsItems = [
 
 const WHATSAPP_NUMBER = '919819264909';
 const WHATSAPP_MESSAGE = "Hi, I'm interested in creating a custom jewelry piece. Please assist me with the design process.";
-const EMAIL_ADDRESS = 'support@ameeshreejewels.com';
+const EMAIL_ADDRESS = 'ameeshree.jewels@gmail.com';
 const EMAIL_SUBJECT = 'Custom Jewellery Request – AmeeShree Jewels';
 const EMAIL_BODY = 'Hello, I want to create a custom jewellery piece. My requirements are:';
 
@@ -179,7 +178,7 @@ export default function CustomJewelryPage() {
        {/* --- Final CTA Block --- */}
        <div className="max-w-4xl mx-auto text-center py-16">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Ready to Create Your Custom Jewel?</h2>
-          <p className="text-lg text-foreground/70 max-w-xl mx-auto mb-8">Your story deserves to be told in gold and gemstones. Let's start the conversation and bring your vision to life.</p>
+          <p className="text-lg text-foreground/70 max-xl mx-auto mb-8">Your story deserves to be told in gold and gemstones. Let's start the conversation and bring your vision to life.</p>
            <Button asChild size="lg" className="rounded-xl">
               <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`} target="_blank" rel="noopener noreferrer">
                   <BotMessageSquare className="mr-2" /> Start Your Design on WhatsApp

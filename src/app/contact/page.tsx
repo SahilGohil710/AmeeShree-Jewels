@@ -59,7 +59,7 @@ export default function ContactPage() {
               <div className="space-y-2">
                 <Mail className="h-8 w-8 text-primary mx-auto" />
                 <h3 className="text-xl font-semibold text-primary">Email</h3>
-                <p className="text-foreground/80 text-sm md:text-base"><a href="mailto:support@ameeshreejewels.com" className="hover:underline">support@ameeshreejewels.com</a></p>
+                <p className="text-foreground/80 text-sm md:text-base"><a href="mailto:ameeshree.jewels@gmail.com" className="hover:underline">ameeshree.jewels@gmail.com</a></p>
               </div>
               <div className="space-y-2">
                 <MessageSquare className="h-8 w-8 text-primary mx-auto" />
